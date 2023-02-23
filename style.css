@@ -1,0 +1,67 @@
+body {
+    background-color: #3daf6c;
+}
+
+.caixa-texto,
+.lista {
+    background-color: #ffffff;
+    padding: 3rem;
+    font-family: "Times New Roman", Times, serif;
+}
+
+.btn-nav {
+    background-color: #3daf6c;
+    color: #ffffff;
+    font-family: "Times New Roman", Times, serif;
+    font-size: 1.5rem;
+    border: none;
+}
+
+.btn-nav:hover {
+    cursor: pointer;
+}
+
+strong {
+    font-size: 1.2rem;
+}
+
+.infografico {
+    padding: 3rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    justify-content: center;
+}
+
+.infografico-box {
+    padding: 3rem;
+    display: flex;
+    flex-direction: row;
+    margin: auto;
+    justify-content: center;
+}
+
+.contexto-mapa {
+    width: 25vw;
+    margin-left: 3rem;
+}
+
+.titulo {
+    font-family: "Times New Roman", Times, serif;
+    color: #ffffff;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+}
+
+.lista {
+    display: flex;
+    justify-content: space-around;
+}
+
+.lista_itens {
+    font-family: "Times New Roman", Times, serif;
+    font-size: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
