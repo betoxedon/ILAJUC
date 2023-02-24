@@ -1,6 +1,6 @@
 document.querySelector("#svg2982").addEventListener("mouseover", (e) => {
     let id = e.target.id;
-    document.querySelector("#" + id).style.fill = "rgb(255,0,0)";
+    document.querySelector("#" + id).style.fill = "#2A2A28";
 });
 
 document.querySelector("#svg2982").addEventListener("mouseout", (e) => {
@@ -8,32 +8,76 @@ document.querySelector("#svg2982").addEventListener("mouseout", (e) => {
     document.querySelector("#" + id).style.fill = "#FEFEE9";
 });
 
-var garimpo = ["Brasil", "USA"];
-var pecuaria = ["Brasil", "USA"];
-var madeira = ["Brasil", "USA"];
-var agricultura = ["Brasil", "USA"];
-var agua = ["Brasil", "USA"];
+var garimpo = ["Brasil", "Canada", "Suisse", "ReinoUnido"];
+var pecuaria = ["Brasil", "USA", "Inde", "Chine"];
+var madeira = [
+    "Brasil",
+    "Allemagne",
+    "Belgique",
+    "Danemark",
+    "France",
+    "Italie",
+    "Portugal",
+    "ReinoUnido",
+    "Pays-Bas",
+];
+var agricultura = ["Brasil", "USA", "Chine", "Inde", "Russie"];
+var agua = ["USA", "Australie", "Italie", "Japon", "Mexique", "Espagne"];
 
-document.querySelector("#garimpo").addEventListener("mouseover", (e) => {
-    garimpo.forEach((pais) => {
-        document.querySelector(`#${pais}`).style.fill = "rgb(255,0,0)";
+function showPaises(id) {
+    let vetor;
+    if (id == "garimpo") {
+        vetor = garimpo;
+    }
+    if (id == "pecuaria") {
+        vetor = pecuaria;
+    }
+    if (id == "madeira") {
+        vetor = madeira;
+    }
+    if (id == "agricultura") {
+        vetor = agricultura;
+    }
+    if (id == "agua") {
+        vetor = agua;
+    }
+    vetor.forEach((pais) => {
+        document.querySelector(`#${pais}`).style.fill = "#2A2A28";
     });
-});
+}
 
-document.querySelector("#garimpo").addEventListener("mouseout", (e) => {
-    garimpo.forEach((pais) => {
+function hidePaises(id) {
+    let vetor;
+    if (id == "garimpo") {
+        vetor = garimpo;
+    }
+    if (id == "pecuaria") {
+        vetor = pecuaria;
+    }
+    if (id == "madeira") {
+        vetor = madeira;
+    }
+    if (id == "agricultura") {
+        vetor = agricultura;
+    }
+    if (id == "agua") {
+        vetor = agua;
+    }
+    vetor.forEach((pais) => {
         document.querySelector(`#${pais}`).style.fill = "#FEFEE9";
     });
+}
+
+document.querySelector("#lista").addEventListener("mouseover", (e) => {
+    showPaises(e.target.id);
 });
 
-document.querySelector("#agua").addEventListener("mouseover", (e) => {
-    garimpo.forEach((pais) => {
-        document.querySelector(`#${pais}`).style.fill = "rgb(255,0,0)";
-    });
+document.querySelector("#lista").addEventListener("mouseout", (e) => {
+    hidePaises(e.target.id);
 });
 
-document.querySelector("#agua").addEventListener("mouseout", (e) => {
-    garimpo.forEach((pais) => {
-        document.querySelector(`#${pais}`).style.fill = "#FEFEE9";
-    });
+document.querySelector("#lista").addEventListener("onclick", (e) => {
+    console.log(e.target);
+    document.querySelector("active").classList.remove("active");
+    // document.querySelector(".texto " + e.target.id).classLista.add("active");
 });
